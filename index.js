@@ -6,6 +6,9 @@ function app() {
         let list = document.querySelector('.list');
         
         let li = document.createElement('li');
+        let id = Math.floor(Math.random() * 100);
+        li.id = id;
+        
         let input = document.querySelector('.task').value;
 
         let task = document.createTextNode(input)
