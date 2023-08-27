@@ -19,6 +19,10 @@ function app() {
         let deleteButton = document.createElement('span');
         deleteButton.innerHTML = (`<button class='delete'>Delete</button`)
 
+        li.appendChild(task);
+        li.appendChild(doneButton);
+        li.appendChild(deleteButton);
+        list.appendChild(li);
         doneButton.addEventListener("click", function(){
             if (li.id == id)
                 li.style.textDecoration = "line-through";
