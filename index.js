@@ -16,6 +16,16 @@ function app() {
         let deleteButton = document.createElement('span');
         deleteButton.innerHTML = (`<button class='delete'>Delete</button`)
 
+        doneButton.addEventListener("click", function(){
+            if (li.id == id)
+                li.style.textDecoration = "line-through";
+        });
+        deleteButton.addEventListener("click", function(){
+           if (li.id == id)
+                list.removeChild(li);
+                li.style.textDecoration = "none";
+        });
+    });
 }
 
 app();
