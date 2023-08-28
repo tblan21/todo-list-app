@@ -11,7 +11,13 @@ function app() {
         
         let input = document.querySelector('.task').value;
 
-        let task = document.createTextNode(input)
+        let value = document.createTextNode(input);
+        let task = document.createElement('p')
+        task.appendChild(value);
+        task.className = ('new-item');
+
+        let buttonContainer = document.createElement('div');
+        buttonContainer.className = ('button-container');
 
         let doneButton = document.createElement('span');
         doneButton.innerHTML = (`<button class='done'>Done</button`)
@@ -19,13 +25,15 @@ function app() {
         let deleteButton = document.createElement('span');
         deleteButton.innerHTML = (`<button class='delete'>Delete</button`)
 
+
         li.appendChild(task);
-        li.appendChild(doneButton);
-        li.appendChild(deleteButton);
+        buttonContainer.appendChild(doneButton);
+        buttonContainer.appendChild(deleteButton);
+        li.appendChild(buttonContainer);
         list.appendChild(li);
         doneButton.addEventListener("click", function(){
             if (li.id == id)
-                li.style.textDecoration = "line-through";
+                task.style.textDecoration = "line-through";
         });
         deleteButton.addEventListener("click", function(){
            if (li.id == id)
